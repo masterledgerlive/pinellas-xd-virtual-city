@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #07131f;
+  --bg-2: #0c1f30;
+  --panel: rgba(8, 24, 38, 0.78);
+  --panel-2: rgba(16, 42, 62, 0.72);
+  --ink: #e8f4f2;
+  --muted: #9bb8b8;
+  --stroke: rgba(125, 211, 252, 0.22);
+  --accent: #2dd4bf;
+  --accent-ink: #04201c;
+  --glow: rgba(45, 212, 191, 0.35);
+  --danger: #fb7185;
+  --map-bottom-fade: #07131f;
+}
+
+[data-skin="realistic"] {
+  color-scheme: light;
+  --bg: #e7f3ef;
+  --bg-2: #d5ebe4;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-2: rgba(240, 252, 249, 0.9);
+  --ink: #134e4a;
+  --muted: #3f6b67;
+  --stroke: rgba(15, 118, 110, 0.22);
+  --accent: #0f766e;
+  --accent-ink: #f4fffb;
+  --glow: rgba(15, 118, 110, 0.25);
+  --map-bottom-fade: #d7ece8;
+}
+
+[data-skin="kids"] {
+  color-scheme: light;
+  --bg: #fff3c4;
+  --bg-2: #ffd6e8;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-2: rgba(255, 240, 250, 0.92);
+  --ink: #3b0764;
+  --muted: #6b21a8;
+  --stroke: rgba(124, 58, 237, 0.28);
+  --accent: #ff6b6b;
+  --accent-ink: #fff7ed;
+  --glow: rgba(255, 107, 107, 0.35);
+  --map-bottom-fade: #fff4d6;
+}
+
+[data-skin="roblox"] {
+  --bg: #12081f;
+  --bg-2: #1c0f33;
+  --panel: rgba(22, 10, 40, 0.8);
+  --panel-2: rgba(42, 18, 70, 0.78);
+  --ink: #f5d0fe;
+  --muted: #c4b5fd;
+  --stroke: rgba(34, 211, 238, 0.35);
+  --accent: #22d3ee;
+  --accent-ink: #081018;
+  --glow: rgba(244, 114, 182, 0.4);
+  --map-bottom-fade: #12081f;
+}
+
+[data-skin="lego"] {
+  color-scheme: light;
+  --bg: #f6e27a;
+  --bg-2: #f97316;
+  --panel: rgba(255, 252, 232, 0.9);
+  --panel-2: rgba(254, 243, 199, 0.92);
+  --ink: #111827;
+  --muted: #1f2937;
+  --stroke: rgba(17, 24, 39, 0.35);
+  --accent: #dc2626;
+  --accent-ink: #fff7ed;
+  --glow: rgba(37, 99, 235, 0.3);
+  --map-bottom-fade: #f4d35e;
+}
+
+[data-skin="blueprint"] {
+  --bg: #071a36;
+  --bg-2: #0b2a4a;
+  --panel: rgba(8, 32, 68, 0.82);
+  --panel-2: rgba(12, 48, 90, 0.8);
+  --ink: #e0f2fe;
+  --muted: #7dd3fc;
+  --stroke: rgba(125, 211, 252, 0.35);
+  --accent: #38bdf8;
+  --accent-ink: #082044;
+  --glow: rgba(56, 189, 248, 0.35);
+  --map-bottom-fade: #082044;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+.display {
+  font-family: var(--font-display);
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.studs {
+  background-image: radial-gradient(circle at 8px 8px, rgba(0, 0, 0, 0.12) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+
+[data-skin="lego"] .glass {
+  box-shadow: 6px 6px 0 #111827;
+  border-width: 2px;
+  border-color: #111827;
+}
+
+[data-skin="kids"] .glass {
+  border-radius: 28px;
+  box-shadow: 0 8px 0 rgba(124, 58, 237, 0.2);
+}
+
+[data-skin="roblox"] .glass {
+  border-radius: 6px;
+  box-shadow: 0 0 24px var(--glow);
+}
+
+[data-skin="blueprint"] .glass {
+  border-radius: 2px;
+  background-image: linear-gradient(rgba(125, 211, 252, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.maplibregl-popup-content {
+  background: var(--panel) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--stroke);
+  border-radius: 14px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-sans);
+  padding: 10px 12px !important;
+}
+
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: var(--panel) !important;
+}
+
+.maplibregl-ctrl-group {
+  background: var(--panel) !important;
+  border: 1px solid var(--stroke) !important;
+  overflow: hidden;
+}
+
+.maplibregl-ctrl-group button {
+  filter: none;
+}
+
+.maplibregl-ctrl-attrib {
+  background: transparent !important;
+  color: var(--muted) !important;
+  font-size: 10px;
+}
+
+#root .maplibregl-map {
+  position: absolute !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.chat-scroll::-webkit-scrollbar,
+.panel-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb,
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: var(--stroke);
+  border-radius: 99px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

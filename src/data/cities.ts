@@ -252,5 +252,81 @@ export const CITIES: RefCity[] = [
       { title: 'Masdar City official site', href: 'https://masdarcity.ae/' },
       { title: 'Atlas of Urban Tech: Masdar', href: 'https://atlasofurbantech.org/cases/are-masdar-city/' },
     ],
+  },
+  {
+    id: 'seoul',
+    name: 'Seoul',
+    country: 'South Korea',
+    themes: ['digital-twin', 'iot', 'mobility', 'open-data'],
+    headline: 'S-Map twin + TOPIS traffic + a City Data Hub on open standards.',
+    works: [
+      'Seoul’s S-Map is a city-scale 3D digital twin built from LiDAR and aerial photography; city materials describe metropolitan coverage expanding through the mid-2020s.',
+      'TOPIS is the long-running traffic operations brain — cameras and sensors in service of buses and incidents, not a greenfield demo.',
+      'City Data Hub work using NGSI-LD is cited in interoperability literature: APIs that other agencies can actually share.',
+      'IMD 2025 placed Seoul 13th globally.',
+    ],
+    pinellasTake:
+      'Pair a public 3D map (this repo’s job) with a real traffic/transit operations feed (PSTA + county signals). Standards (NGSI-LD / open GTFS) beat a custom data lake.',
+    sources: [
+      { title: 'IMD 2025 ranking recap', href: 'https://www.humanresourcesonline.net/how-global-cities-rank-on-the-smart-city-index-2025' },
+      { title: 'Comparative City Data Hub note', href: 'https://mibmparidnya.in/index.php/PARIDNYA/article/download/173232/117161' },
+    ],
+  },
+  {
+    id: 'london',
+    name: 'London',
+    country: 'United Kingdom',
+    themes: ['open-data', 'mobility', 'participation'],
+    headline: 'The Datastore habit: publish hundreds of datasets and let Citymapper happen.',
+    works: [
+      'The London Datastore is a free portal with hundreds of datasets (transport, housing, environment). Roundups often say “700+”; treat the exact count as changing.',
+      'TfL’s open APIs enabled a generation of independent travel apps — the canonical “city as platform” success.',
+      'IMD 2025 placed London 6th. Borough fragmentation remains the planning challenge; open data is how a 32-borough city still composes.',
+    ],
+    pinellasTake:
+      '24 municipalities + the County is London-in-miniature. A Pinellas Datastore with GTFS, flood, parcel, and spend feeds is the highest-leverage copy.',
+    sources: [
+      { title: 'Verdict magazine smart-city roundup (Datastore)', href: 'https://magazine.verdict.co.uk/verdict_magazine_may21/smartest_cities' },
+      { title: 'IMD 2025 ranking recap', href: 'https://www.humanresourcesonline.net/how-global-cities-rank-on-the-smart-city-index-2025' },
+    ],
+  },
+  {
+    id: 'nyc',
+    name: 'New York City',
+    country: 'United States',
+    themes: ['open-data', 'iot', 'mobility', 'caution'],
+    headline: 'Open Data Law plus a messy, real megacity IoT stack — LinkNYC and all.',
+    works: [
+      'NYC’s Open Data Law requires agency datasets on the public portal — a legal stick, not a hackathon vibe.',
+      'The city has used IoT in transportation, environmental monitoring, and connectivity kiosks. LinkNYC showed both the power of street furniture-as-a-platform and the backlash when privacy and advertising collide.',
+      'OneNYC / subsequent strategic plans treat equity and climate as first-class, not add-ons.',
+    ],
+    pinellasTake:
+      'Pass an open-data rule with teeth. Street furniture (bus shelters, beach Wi-Fi) can host sensors if the privacy policy is on the pole and kids’ data is off-limits.',
+    caution: 'Connectivity kiosks taught the US that “free Wi-Fi” can become an ad-surveillance fight.',
+    sources: [
+      { title: 'NYC Open Data portal', href: 'https://opendata.cityofnewyork.us/' },
+    ],
+  },
+  {
+    id: 'toronto',
+    name: 'Toronto (Sidewalk Labs / Quayside)',
+    country: 'Canada',
+    themes: ['caution', 'participation', 'iot'],
+    headline: 'The most important smart-city failure of the 2010s: data governance was not a vendor extra.',
+    works: [
+      'Alphabet’s Sidewalk Labs cancelled the Quayside project on 7 May 2020, citing COVID-era economic uncertainty (Reuters, CBC). The project still lacked final approvals and had faced years of privacy opposition.',
+      'The proposed Urban Data Trust was criticized by Ontario’s Information and Privacy Commissioner (Sept 2019) as overlapping existing regulators, lacking independent oversight, and ill-fit to MFIPPA/FIPPA.',
+      'Scholars and civic groups argued Waterfront Toronto should not have co-written data/IP policy with a vendor. “Don’t make policy with a vendor” is the durable lesson.',
+      'Sidewalk published a Digital Innovation Appendix and pledged no facial recognition / no ad use of personal data — still not enough to settle legitimacy.',
+    ],
+    pinellasTake:
+      'Write data rules before RFPs. Public ledger + opt-in household data-pay is the opposite of a private urban data trust. If a vendor needs a new legal form, stop.',
+    caution: 'Cancelled. Learn in public; do not re-run Quayside on the Gulf.',
+    sources: [
+      { title: 'CBC: Sidewalk Labs cancels Quayside', href: 'https://www.cbc.ca/news/canada/toronto/sidewalk-labs-cancels-project-1.5559370' },
+      { title: 'Reuters: Alphabet cancels Toronto project', href: 'https://www.reuters.com/article/technology/alphabets-sidewalk-labs-cancels-toronto-smart-city-project-idUSKBN22K0GT/' },
+      { title: 'Ontario IPC letter on the MIDP (2019 PDF)', href: 'https://www.ipc.on.ca/sites/default/files/legacy/2019/09/2019-09-24-ltr-stephen-diamond-waterfront_toronto-residewalk-proposal.pdf' },
+    ],
   }
 ]

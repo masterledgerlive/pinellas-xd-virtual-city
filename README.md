@@ -25,6 +25,8 @@ This is a civic demo, not an official county product, not medical advice, and no
 2. Click **Code → HTTPS or SSH** and clone, or use **Use this template / Fork**.
 3. Run it locally (below). The landing page is the city’s access point.
 
+`npm install` copies MapLibre’s worker files from the package. If the large local municipality polygons are not in the clone, the map loads the same 24 Pinellas places from US Census TIGERweb at runtime.
+
 If you are looking at this project inside Cursor and do not yet see it on GitHub, create or connect a repository from the **Create repo** control, then the same MIT source is what you publish.
 
 ## License
@@ -110,6 +112,7 @@ src/
   pages/           Landing, Explore (map), Wallet, References, Safety
   context/         Civic session + shared DEMO ledger
   lib/wallet.ts    Phantom / EIP-1193 / DEMO bind (message sign only)
+  lib/civic-geo.ts Local GeoJSON, or Census TIGERweb + synthetic buildings
   components/      MapCanvas, skins, layers, agents, ledger, header
   data/            municipalities, layers, skins, cities, ledger, agent mocks
 public/geojson/    Census-derived polygons + generated schematic layers

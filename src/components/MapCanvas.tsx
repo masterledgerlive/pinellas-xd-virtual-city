@@ -9,6 +9,7 @@ import type { MapLayerMouseEvent, MapMouseEvent } from 'maplibre-gl'
 import { useEffect, useRef } from 'react'
 import { LAYERS, type LayerId } from '@/data/layers'
 import { MUNICIPALITY_MAP } from '@/data/municipalities'
+import { loadBuildingsGeojson, loadMunicipalitiesGeojson } from '@/lib/civic-geo'
 import { SKIN_MAP, type SkinId } from '@/data/skins'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
@@ -167,16 +168,21 @@ function addOsmBuildings(map: MapLibreMap) {
   )
 }
 
-function addCityLayers(map: MapLibreMap) {
+async function addCityLayers(map: MapLibreMap) {
   if (map.getSource('municipalities')) return
+
+  const [municipalities, buildings] = await Promise.all([
+    loadMunicipalitiesGeojson(),
+    loadBuildingsGeojson(),
+  ])
 
   map.addSource('county', { type: 'geojson', data: '/geojson/county.geojson' })
   map.addSource('municipalities', {
     type: 'geojson',
-    data: '/geojson/municipalities.geojson',
+    data: municipalities,
     promoteId: 'id',
   })
-  map.addSource('buildings', { type: 'geojson', data: '/geojson/buildings.geojson' })
+  map.addSource('buildings', { type: 'geojson', data: buildings })
   map.addSource('unincorporated', { type: 'geojson', data: '/geojson/unincorporated.geojson' })
 
   map.addLayer({
@@ -409,16 +415,18 @@ export function MapCanvas({ skin, layers, selectedId, orbit, onSelect }: Props) 
     const popup = new Popup({ closeButton: false, closeOnClick: false, offset: 12 })
 
     const onReady = () => {
-      try {
-        addCityLayers(map)
-        addOsmBuildings(map)
-        restyleBasemap(map, skinRef.current)
-        applyLayerVisibility(map)
-        readyRef.current = true
-        map.resize()
-      } catch (err) {
-        console.error('Pinellas XD map layers failed', err)
-      }
+      void (async () => {
+        try {
+          await addCityLayers(map)
+          addOsmBuildings(map)
+          restyleBasemap(map, skinRef.current)
+          applyLayerVisibility(map)
+          readyRef.current = true
+          map.resize()
+        } catch (err) {
+          console.error('Pinellas XD map layers failed', err)
+        }
+      })()
     }
 
     map.on('style.load', onReady)

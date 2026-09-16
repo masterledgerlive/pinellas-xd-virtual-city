@@ -328,5 +328,112 @@ export const CITIES: RefCity[] = [
       { title: 'Reuters: Alphabet cancels Toronto project', href: 'https://www.reuters.com/article/technology/alphabets-sidewalk-labs-cancels-toronto-smart-city-project-idUSKBN22K0GT/' },
       { title: 'Ontario IPC letter on the MIDP (2019 PDF)', href: 'https://www.ipc.on.ca/sites/default/files/legacy/2019/09/2019-09-24-ltr-stephen-diamond-waterfront_toronto-residewalk-proposal.pdf' },
     ],
-  }
+  },
+  {
+    id: 'vienna',
+    name: 'Vienna',
+    country: 'Austria',
+    themes: ['open-data', 'iot', 'participation'],
+    headline: 'WienBot + mandatory-feeling open data + a FIWARE urban data platform.',
+    works: [
+      'WienBot (launched Dec 2017) answers city questions from OGD, events, and Wiener Linien real-time APIs — an agent on top of the same data the public can use.',
+      'Vienna publishes geodata, routing, air, and service hours; from 1 Sept 2025 Austria’s Information Freedom Act requires authorities to publish non-exempt data as OGD on data.gv.at.',
+      'smartdata.wien uses FIWARE / open standards; Vienna is in the Open & Agile Smart Cities network and cites Minimum Interoperability Mechanisms (MIMs).',
+    ],
+    pinellasTake:
+      'Our agent panel is a WienBot sketch: talk to the city on the same map and the same open layers. Prefer FIWARE/OASC-style interoperability over a custom chatbot silo.',
+    sources: [
+      { title: 'City of Vienna: WienBot', href: 'https://www.wien.gv.at/en/content/bot' },
+      { title: 'Vienna Open Government Data', href: 'https://www.wien.gv.at/en/content/open-government-data' },
+      { title: 'smartdata.wien', href: 'https://digitales.wien.gv.at/en/projekt/plattform-smartdata-wien/' },
+    ],
+  },
+  {
+    id: 'stockholm',
+    name: 'Stockholm',
+    country: 'Sweden',
+    themes: ['open-data', 'digital-twin', 'iot', 'mobility'],
+    headline: 'Open street-level APIs, vacuum waste at Hammarby, and a Kista twin experiment.',
+    works: [
+      'Stockholm Traffic Office publishes OGC API Features / WMS/WFS for bikes, parking, signals, lighting, and more — operational GIS as open data.',
+      'Hammarby Sjöstad’s underground vacuum waste network is a frequently cited eco-district system (property-owner run, with sorting as the failure mode).',
+      'Digital Vision Kista is an explicit municipal path from IoT telemetry to a district digital twin and Agenda 2030 decisions.',
+    ],
+    pinellasTake:
+      'Publish the boring layers (signals, bike parking, lift stations) as APIs. Build the twin on those, like Kista, instead of a pretty mesh with no pipes.',
+    sources: [
+      { title: 'Stockholm Trafikkontoret open data', href: 'https://openstreetgs.stockholm.se/home/Data' },
+      { title: 'Digital Vision Kista', href: 'https://smartbuilt.se/in-english/projects/information-infrastructure/digital-vision-kista-stockholms-path-to-a-digital-twin/' },
+    ],
+  },
+  {
+    id: 'telaviv',
+    name: 'Tel Aviv-Yafo',
+    country: 'Israel',
+    themes: ['participation', 'open-data', 'iot'],
+    headline: 'A resident-card city: digital services for people who already live there.',
+    works: [
+      'Digital Tel Aviv / DigiTel is widely cited as a resident-engagement platform: a personal city account for services, culture, and targeted notices — closer to a civic membership than a tourist app.',
+      'The city has a long startup/civic-tech overlay and publishes municipal data; treat marketing claims about “#1 smart city” awards as awards, not measurements.',
+      'Mobility data (bike share, lanes) is part of the same digital-services bundle in public descriptions of the programme.',
+    ],
+    pinellasTake:
+      'Visitor pass vs resident pass should feel different, like DigiTel vs a tourist SIM. Residents get weight on votes; visitors get a time-bounded ledger.',
+    sources: [
+      { title: 'City of Tel Aviv-Yafo', href: 'https://www.tel-aviv.gov.il/en/Pages/HomePage.aspx' },
+    ],
+  },
+  {
+    id: 'melbourne',
+    name: 'Melbourne',
+    country: 'Australia',
+    themes: ['open-data', 'iot', 'digital-twin'],
+    headline: 'Open data, urban forest, and a sensor-literate city government.',
+    works: [
+      'The City of Melbourne Open Data Portal publishes a large catalogue (the city has long advertised 200+ datasets; counts change). Pedestrian counters in the CBD are a famous, actually used sensor series.',
+      'Urban Forest Visual and related tree-canopy work show a digital twin instinct applied to shade and heat — immediately relevant to Florida.',
+      'Smart-city programme language in Australia often sits under federal/state digital strategies; prefer the portal and the sensors over slogans.',
+    ],
+    pinellasTake:
+      'Count people in the shade. A Pinellas heat + tree + bus-stop twin would outperform a generic “innovation district.” Melbourne already proved counters can be public.',
+    sources: [
+      { title: 'City of Melbourne Open Data', href: 'https://data.melbourne.vic.gov.au/' },
+    ],
+  },
+  {
+    id: 'zurich',
+    name: 'Zurich',
+    country: 'Switzerland',
+    themes: ['open-data', 'digital-twin', 'grid'],
+    headline: 'IMD’s #1 smart city in both 2024 and 2025 — boring excellence as the flex.',
+    works: [
+      'Zurich retained the top IMD Smart City Index rank in 2024 and 2025. IMD blends resident surveys (structures + technology across safety, mobility, activities, opportunity, governance) — it is perception-plus-data, not a sensor count.',
+      'Swiss cities typically pair strong utilities, transit, and e-government rather than a single moonshot platform.',
+      'The lesson for Pinellas: residents ranking sanitation, transit, and safety high is the index. Gadgets are optional.',
+    ],
+    pinellasTake:
+      'Win the “did the bus come / did the tide flood / did the bill make sense” basics, then layer twins. Zurich’s rank is a vibe check on competence.',
+    sources: [
+      { title: 'Straits Times on IMD 2024 (Zurich #1)', href: 'https://www.straitstimes.com/singapore/singapore-is-5th-smartest-city-in-the-world-top-in-asia-global-index' },
+      { title: 'IMD 2025 ranking recap (Zurich #1)', href: 'https://www.humanresourcesonline.net/how-global-cities-rank-on-the-smart-city-index-2025' },
+    ],
+  },
+  {
+    id: 'oslo',
+    name: 'Oslo',
+    country: 'Norway',
+    themes: ['mobility', 'grid', 'open-data'],
+    headline: 'IMD’s perennial #2: EVs, a climate budget, and a car-quiet centre.',
+    works: [
+      'IMD Smart City Index 2025 placed Oslo 2nd (after Zurich, before Geneva).',
+      'Oslo is a global reference for battery-electric vehicle uptake, public charging, and using procurement + road pricing rather than a single “smart mobility app.”',
+      'The city’s climate budget treats emissions like money — an accountability cousin of Pinellas XD’s “every cent” ledger, applied to carbon.',
+    ],
+    pinellasTake:
+      'PSTA’s electric-bus charging deal with Duke Energy (2022) is already an Oslo-shaped move. Publish charger uptime and diesel-bus retirement on the public ledger.',
+    sources: [
+      { title: 'IMD 2025 ranking recap', href: 'https://www.humanresourcesonline.net/how-global-cities-rank-on-the-smart-city-index-2025' },
+      { title: 'PSTA–Duke Energy charging agreement (context)', href: 'https://psta.net/press_releases/psta-continues-to-go-green/' },
+    ],
+  },
 ]

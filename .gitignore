@@ -14,6 +14,8 @@ dist-ssr
 agent-tools
 scripts-e2e.mjs
 scripts-diag.mjs
+public/maplibre/maplibre-gl-shared.mjs
+public/maplibre/maplibre-gl-worker.mjs
 
 # Editor directories and files
 .vscode/*

@@ -99,7 +99,7 @@ export function ExplorePage() {
                 className="glass rounded-full px-3 py-2 text-sm"
                 onClick={() => setDrawer((d) => (d === 'agent' ? 'none' : 'agent'))}
               >
-                <Sparkles className="h-4 w-4" />
+                <Sparkles className="mr-1 inline h-4 w-4" />
                 Agents & pass
               </button>
             </div>

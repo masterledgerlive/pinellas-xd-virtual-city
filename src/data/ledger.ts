@@ -77,7 +77,7 @@ export const DEMO_TX: LedgerTx[] = [
   },
   {
     id: 'tx-007',
-    t: '2026-09-16 16:02:33',
+    t: '2026-09-16 14:02:33',
     actor: 'Clearwater Beach trolly (demo)',
     memo: 'Visitor hop-on',
     cents: -50,
